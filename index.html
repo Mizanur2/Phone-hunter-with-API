@@ -11,19 +11,55 @@
 </head>
 
 <body>
-    <h1>Phone hunter </h1>
-    <header>
-
+    <header class="">
+        <nav class="container mx-auto">
+            <div class="navbar  flex justify-between">
+                <div class="">
+                    <a class="text-3xl font-bold">Hot Gadget</a>
+                </div>
+                <div class="">
+                    <button class="btn btn-primary">
+                        Sign up
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="container mx-auto text-center space-y-10">
+            <h1 class="text-4xl">Apple iPhone 13 Pro Max</h1>
+            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+                in some form, by injected humou.</p>
+            <button class="btn btn-primary">Shop Now</button>
+        </div>
+        <div class="container w-3/4 mx-auto flex justify-around">
+            <img class="h-fit mt-36" src="images/pngwing 2.png" alt="">
+            <img class="h-fit" src="images/pngwing 1.png" alt="">
+            <img class="h-fit mt-36" src="images/pngwing 3.png" alt="">
+        </div>
     </header>
 
     <main>
-        <section class="container mx-auto">
+        <section class="container mx-auto flex justify-center">
+
+            <div class="relative my-10">
+                <input id="search-input" type="text" placeholder="Search here"
+                    class="input input-bordered w-[500px] max-w-xs" />
+                <button id="search-btn" onclick="searchPhone()"
+                    class="btn btn-outline btn-primary absolute right-0">Search</button>
+            </div>
+
 
         </section>
         <section class="container mx-auto">
             <div class="phone-container grid grid-cols-1 lg:grid-cols-3 gap-5" id="phone-container">
 
             </div>
+
+            <!-- modal  -->
+
+            <!-- Open the modal using ID.showModal() method -->
+
+            <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            </dialog>
         </section>
 
     </main>
