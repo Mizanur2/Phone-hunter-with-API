@@ -49,9 +49,40 @@
 
 
         </section>
+
+        <!-- no phone found -->
+
+        <div id="not-found" role="alert" class="alert alert-error w-1/2 mx-auto hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Error! No Phone Found. Please Search Properly</span>
+        </div>
+
         <section class="container mx-auto">
+
+
+            <div class="flex justify-center my-5">
+                <span id="loader" class="loading loading-ring loading-lg bg-red-600 hidden"></span>
+
+                <!-- <div  class="flex flex-col gap-4 w-52">
+                    <div class="skeleton h-32 w-full"></div>
+                    <div class="skeleton h-4 w-28"></div>
+                    <div class="skeleton h-4 w-full"></div>
+                    <div class="skeleton h-4 w-full"></div>
+                </div> -->
+            </div>
+
             <div class="phone-container grid grid-cols-1 lg:grid-cols-3 gap-5" id="phone-container">
 
+            </div>
+
+            <!-- show all btn  -->
+
+            <div class="flex justify-center my-5">
+                <button id="load-more-btn" onclick="" class="btn btn-outline btn-primary hidden">Load more</button>
             </div>
 
             <!-- modal  -->

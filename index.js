@@ -15,7 +15,26 @@ document.addEventListener('keyup', (e) => {
 const displayPhone = (phones) => {
     const phoneContainer = document.getElementById('phone-container');
     phoneContainer.innerHTML = '';
-    // console.log(phones);
+    console.log(phones.length);
+    if (phones.length > 20) {
+        document.getElementById('load-more-btn').classList.remove('hidden')
+    }
+    else (
+        document.getElementById('load-more-btn').classList.add('hidden')
+    )
+
+    if (phones.length === 0) {
+        document.getElementById('not-found').classList.remove('hidden')
+    }
+    else (
+        document.getElementById('not-found').classList.add('hidden')
+
+    )
+
+
+
+
+    phones = phones.slice(0, 20)
     phones.forEach(phone => {
         // console.log(phoneId);
 
@@ -37,6 +56,7 @@ const displayPhone = (phones) => {
 
         phoneContainer.appendChild(phoneDiv)
     })
+    loadingSpinner(false)
 }
 
 
@@ -45,12 +65,22 @@ const searchPhone = () => {
     const searchText = document.getElementById('search-input').value;
     console.log(searchText);
     loadPhone(searchText)
+    loadingSpinner(true)
     // return ;
+}
+
+const loadingSpinner = (isLoading) => {
+    if (isLoading) {
+        document.getElementById('loader').classList.remove('hidden')
+    }
+    else (
+        document.getElementById('loader').classList.add('hidden')
+    )
 }
 
 const showDetails = (phoneId) => {
     const modalContainer = document.getElementById('my_modal_5');
-    console.log(modalContainer);
+    // console.log(modalContainer);
     modalContainer.innerHTML = ''
     fetch(`https://openapi.programming-hero.com/api/phone/${phoneId}`)
         .then(res => res.json())
